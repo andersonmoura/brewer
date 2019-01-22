@@ -19,6 +19,8 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 
 import com.algaworks.brewer.controller.CervejasController;
 
+import nz.net.ultraq.thymeleaf.LayoutDialect;
+
 
 @Configuration
 @ComponentScan(basePackageClasses = {CervejasController.class})
@@ -45,7 +47,8 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 	public TemplateEngine templateEngine() {
 		SpringTemplateEngine engine = new SpringTemplateEngine();
 		engine.setEnableSpringELCompiler(true);
-		engine.setTemplateResolver(templateResolver());
+		engine.setTemplateResolver(templateResolver());		
+		engine.addDialect(new LayoutDialect()); //Adicionar novo layout: thymeleaf dialect
 		return engine;
 	}
 
