@@ -30,11 +30,6 @@ public class CervejasController {
 		System.out.println(">>>> DESCRIÇÃO: " + cerveja.getDescricao());
 		attributes.addFlashAttribute("mensagem", "Cerveja salva com sucesso!!!"); //Redirect precisa de atributo 'flash' para não peder valores
 		return "redirect:/cervejas/novo";
-	}
-	
-	@RequestMapping("/cervejas/cadastro")
-	public String cadastro() {
-		return "cerveja/cadastro-produto";
-	}
+	}	
 	
 }
