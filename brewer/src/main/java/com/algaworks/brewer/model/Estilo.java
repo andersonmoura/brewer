@@ -1,6 +1,7 @@
 package com.algaworks.brewer.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,7 +26,7 @@ public class Estilo implements Serializable{
 	private String nome;
 	
 	@OneToMany(mappedBy = "estilo")
-	private Cerveja cerveja;
+	private List<Cerveja> cervejas;
 
 	public Long getId() {
 		return id;
@@ -43,12 +44,14 @@ public class Estilo implements Serializable{
 		this.nome = nome;
 	}
 
-	public Cerveja getCerveja() {
-		return cerveja;
+	
+
+	public List<Cerveja> getCervejas() {
+		return cervejas;
 	}
 
-	public void setCerveja(Cerveja cerveja) {
-		this.cerveja = cerveja;
+	public void setCervejas(List<Cerveja> cervejas) {
+		this.cervejas = cervejas;
 	}
 
 	@Override
