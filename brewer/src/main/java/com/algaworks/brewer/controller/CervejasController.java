@@ -33,12 +33,14 @@ public class CervejasController {
 	
 	@RequestMapping(value = "/cervejas/novo", method = RequestMethod.POST)
 	public ModelAndView cadastrar(@Valid Cerveja cerveja, BindingResult result, Model model, RedirectAttributes attributes) {
-		if(result.hasErrors()) {
-			return novo(cerveja);
-		}
+//		if(result.hasErrors()) {
+//			return novo(cerveja);
+//		}
 		
 		System.out.println(">>>> SKU: " + cerveja.getSku());
 		System.out.println(">>>> NOME: " + cerveja.getNome());
+		System.out.println(">>>> SABOR: " + cerveja.getSabor());
+		System.out.println(">>>> ORIGEM: " + cerveja.getOrigem());
 		System.out.println(">>>> DESCRIÇÃO: " + cerveja.getDescricao());
 		attributes.addFlashAttribute("mensagem", "Cerveja salva com sucesso!!!"); //Redirect precisa de atributo 'flash' para não peder valores
 		return new ModelAndView("redirect:/cervejas/novo");
