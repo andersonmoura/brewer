@@ -42,6 +42,7 @@ public class CervejasController {
 		System.out.println(">>>> SABOR: " + cerveja.getSabor());
 		System.out.println(">>>> ORIGEM: " + cerveja.getOrigem());
 		System.out.println(">>>> DESCRIÇÃO: " + cerveja.getDescricao());
+		System.out.println(">>>> ESTILO: " + cerveja.getEstilo());
 		attributes.addFlashAttribute("mensagem", "Cerveja salva com sucesso!!!"); //Redirect precisa de atributo 'flash' para não peder valores
 		return new ModelAndView("redirect:/cervejas/novo");
 	}	
