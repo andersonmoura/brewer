@@ -51,7 +51,7 @@
 
 		<!-- MySql Driver -->
 		<mysql-connector-java.version>8.0.14</mysql-connector-java.version>
-		
+
 		<!-- Spring Data JPA -->
 		<spring-data-jpa.version>1.10.2.RELEASE</spring-data-jpa.version>
 	</properties>
@@ -95,7 +95,7 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<dependencies>
+	<dependencies>	
 		<!-- Spring MVC -->
 		<dependency>
 			<groupId>org.springframework</groupId>
