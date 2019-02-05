@@ -31,7 +31,7 @@ public class CervejasController {
 		ModelAndView mv = new ModelAndView("cerveja/CadastroCerveja");
 		mv.addObject("sabores", Sabor.values());
 		mv.addObject("estilos", estilos.findAll());
-		mv.addObject("origens", Origem.values());
+		mv.addObject("origens", Origem.values());	
 		return mv;
 	}
 	
@@ -41,8 +41,8 @@ public class CervejasController {
 			return novo(cerveja);
 		}
 		
-//		System.out.println(">>>> SKU: " + cerveja.getSku());
-//		System.out.println(">>>> NOME: " + cerveja.getNome());
+		System.out.println(">>>> SKU: " + cerveja.getSku());
+		System.out.println(">>>> NOME: " + cerveja.getNome());
 //		System.out.println(">>>> SABOR: " + cerveja.getSabor());
 //		System.out.println(">>>> ORIGEM: " + cerveja.getOrigem());
 //		System.out.println(">>>> DESCRIÇÃO: " + cerveja.getDescricao());
