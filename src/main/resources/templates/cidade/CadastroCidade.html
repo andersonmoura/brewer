@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html layout:decorator="'layout/LayoutPadrao'"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <title>Cadastro de cidade</title>
+</head>
+
+<section layout:fragment="conteudo">
+
+    <div class="page-header">
+        <div class="container-fluid">
+            <h1>
+                Cadastro de cidade
+            </h1>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <form>
+            <div class="row">
+                <div class="form-group  col-sm-4">
+                    <label for="estado">Estado</label>
+                    <select class="form-control" id="estado">
+                        <option value="">Selecione o estado</option>
+                    </select>
+                </div>
+
+                <div class="form-group  col-sm-8">
+                    <label for="nome">Nome</label>
+                    <input autofocus="autofocus" class="form-control" id="nome" type="text"/>
+                </div>
+            </div>
+
+            <button class="btn  btn-primary" type="submit">Salvar</button>
+        </form>
+    </div>
+</section>
+
+</html>
