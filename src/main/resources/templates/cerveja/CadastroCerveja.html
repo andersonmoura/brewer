@@ -51,7 +51,9 @@
                     <div class="bw-field-action">
                         <select class="form-control" id="estilo">
                             <option value="">Selecione o estilo</option>
-                            <option value="1">Pale lager</option>
+                            <option th:each="estilo : ${estilos}" th:text="${estilo.nome}" th:value="${estilo.codigo}">
+                                Pale lager
+                            </option>
                         </select>
 
                         <div class="bw-field-action__icon">
@@ -66,7 +68,9 @@
                     <label for="sabor">Sabor</label>
                     <select class="form-control" id="sabor">
                         <option value="">Selecione o sabor</option>
-                        <option value="1">Adocicada</option>
+                        <option th:each="sabor : ${sabores}" th:text="${sabor.descricao}" th:value="${sabor}">
+                            Adocicada
+                        </option>
                     </select>
                 </div>
 
@@ -81,14 +85,13 @@
                 <div class="col-lg-3  col-sm-6  form-group">
                     <label for="origem">Origem</label>
                     <div>
-                        <div class="radio  radio-inline">
-                            <input name="origem" type="radio">
-                            <label>Nacional</label>
-                        </div>
-                        <div class="radio  radio-inline">
-                            <input name="origem" type="radio">
-                            <label>Internacional</label>
-                        </div>
+                        <th:block th:each="origem: ${origens}">
+                            <div class="radio  radio-inline">
+                                <input id="nacional" name="origem" th:id="|id_${origem}|" th:value="${origem}"
+                                       type="radio">
+                                <label Nacional th:for="|id_${origem}|" th:text="${origem.descricao}"</label>
+                            </div>
+                        </th:block>
                     </div>
                 </div>
             </div>
